@@ -1,0 +1,43 @@
+﻿<div style="margin-left:3em; margin-right:3em;">
+    <MudGrid>
+        <MudItem xs="12" sm="3" xl="2">
+            <MudList Clickable="true">
+                <h4>In stock</h4>
+                <MudSwitch @bind-Checked="@displayLoading" Color="Color.Primary" />
+                <MudItem xs="12" sm="6" md="4">
+                    <MudTextField @bind-Value="@MinValue" Label="Min Price" Variant="Variant.Outlined" Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.AttachMoney" />
+                    <MudTextField @bind-Value="@MaxValue" Label="Max Price" Variant="Variant.Outlined" Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.AttachMoney" />
+                </MudItem>
+            </MudList>
+        </MudItem>
+        <MudItem xs="12" sm="9">
+            @if (!displayLoading)
+            {
+                <MudGrid Spacing="4">
+                    @for (int i = 0; i < 20; i++)
+                    {
+                        <MudItem xs="12" sm="6" md="4" lg="3" xl="3">
+                            <ItemShowcase></ItemShowcase>
+                        </MudItem>
+                    }
+                </MudGrid>
+            }
+            else
+            {
+                <MudGrid Spacing="2">
+                    @for (int i = 0; i < 5; i++)
+                    {
+                        <MudItem xs="12" sm="6" md="4" lg="3" xl="2">
+                            <ItemLoading></ItemLoading>
+                        </MudItem>
+                    }
+                </MudGrid>
+            }
+        </MudItem>
+    </MudGrid>
+</div>
+@code {
+    public bool displayLoading = false;
+    public double MinValue = 0;
+    public double MaxValue = 0;
+}

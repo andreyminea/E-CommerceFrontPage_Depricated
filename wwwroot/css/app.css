@@ -1,0 +1,18 @@
+﻿.page{
+    margin-top:2em;
+    margin-left:2em;
+    margin-right:2em;
+}
+
+.shoppingCart {
+    text-align: end;
+    vertical-align: central;
+}
+
+.cardImage {
+    height: 200px;
+    background-color: bisque;
+    align-self: center;
+    padding: 5px;
+}
+

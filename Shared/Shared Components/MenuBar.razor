@@ -1,0 +1,52 @@
+﻿@using IzonStore.Models
+
+<MudGrid Spacing="1">
+    <MudItem xs="12">      
+        <MudAppBar Fixed="false" Color="@Color.Transparent" Dense="true"
+                   Style="
+                    padding-left:20px;
+                    padding-right: 20px;
+                    background: linear-gradient(90deg, #733ba9 0%, #521989 40%, crimson 90%, red 100%);
+                    text-align:center">
+            @if (categories != null)
+            {
+                <MudGrid Spacing="3">
+                    @foreach (var item in categories)
+                    {
+                        <MudItem xs="12" sm="6" md="3" lg="2"  xl="1" >
+                            <MudMenu Label=@item.Name Size="@Size.Large" Color="@Color.Tertiary" Dense="true">
+                                @foreach (var obj in item.Subcategories)
+                                {
+                                    <MudMenuItem>@obj</MudMenuItem>
+                                }
+                            </MudMenu>
+                        </MudItem>
+                    }
+                </MudGrid>
+            }
+        </MudAppBar>
+    </MudItem>
+</MudGrid>
+
+
+@code {
+    List<Category> categories;
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+
+        categories = new List<Category>()
+        {
+            new Category("Telefoane"), //1
+            new Category("Laptop"), //2
+            new Category("Desktop PCs"), //3
+            new Category("Componente PC"), //4
+            new Category("Electrocasnice"), //5
+            new Category("Auto"), //6
+            new Category("Fashion"), //7
+            new Category("Console"), //8
+            new Category("Jucarii copii"), //9
+        };
+    }
+}

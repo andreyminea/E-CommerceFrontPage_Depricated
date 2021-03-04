@@ -1,0 +1,38 @@
+﻿<div style="margin-left:3em; margin-right:3em;">
+    <MudGrid>
+        <MudItem xs="12">
+            @if (!displayLoading)
+            {
+                <MudGrid Spacing="4">
+                    @for (int i = 0; i < 20; i++)
+                    {
+                        <MudItem xs="12" sm="6" md="4" lg="3" xl="2">
+                            <ItemShowcase></ItemShowcase>
+                        </MudItem>
+                    }
+                </MudGrid>
+            }
+            else
+            {
+                <MudGrid Spacing="2">
+                    @for (int i = 0; i < 20; i++)
+                    {
+                        <MudItem xs="12" sm="6" md="4" lg="3" xl="2">
+                            <ItemLoading></ItemLoading>
+                        </MudItem>
+                    }
+                </MudGrid>
+            }
+        </MudItem>
+    </MudGrid>
+</div>
+    @code
+{
+        bool displayLoading = false ;
+
+        protected override async void OnInitialized()
+        {
+            this.StateHasChanged();
+        }
+
+    }

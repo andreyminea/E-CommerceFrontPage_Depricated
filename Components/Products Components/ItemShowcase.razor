@@ -1,0 +1,43 @@
+﻿@inject CartService cart
+@inject FavoritesService favorite
+
+<MudCard Elevation="3" Class="productcard">
+    <MudCardHeader />
+    <div style="height:200px;">
+        <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.lowyat.net%2Fwp-content%2Fuploads%2F2017%2F08%2Fhp-omen-x-laptop-2.jpg&f=1&nofb=1"
+             style="height:inherit; display:block; margin:auto" />
+    </div>
+    <MudCardContent Style="text-align:center">
+        <MudText Typo="Typo.subtitle1" Class="tooltip">
+            <div class="cardTitle">
+                @title
+            </div>
+            <span class="tooltiptext">
+                @title
+            </span>
+        </MudText>
+        <MudText Typo="Typo.h6" Class="price" Style="margin-top:20px;">4300 Lei</MudText>
+    </MudCardContent>
+    <MudCardActions Style="justify-content:center;">
+        <MudButton Class="cartbutton" Variant="Variant.Filled" StartIcon="@Icons.Material.AddShoppingCart" OnClick="OnAddToCart">
+            Adauga in cos
+        </MudButton>
+        <MudIconButton Style="margin-top:-20px; margin-left:10px" Color="@Color.Error" Icon="@Icons.Material.Favorite" Size="Size.Medium" OnClick="OnAddToFavorites" />
+    </MudCardActions>
+</MudCard>
+
+<link href="/css/Components.css" rel="stylesheet">
+
+@code {
+    string title = @"Laptop Gaming ASUS ROG Strix G15 G512LI cu procesor Intel® Core™ i7-10750H pana la 5.00 GHz, 15.6', Full HD, 144Hz, 8GB, 1TB SSD, NVIDIA® GeForce® GTX 1650 Ti 4GB, Free DOS, Black";
+
+    private async Task OnAddToCart()
+    {
+        await cart.AddDataAsync("Laptop");
+    }
+
+    private async Task OnAddToFavorites()
+    {
+        await favorite.AddDataAsync("Laptop");
+    }
+}

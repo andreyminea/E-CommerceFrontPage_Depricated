@@ -1,0 +1,58 @@
+﻿
+<MudGrid>
+    <MudItem>
+        <div class="pic-ctn" style="">
+
+            @foreach (ImgSliderItem obj in items)
+            {
+                <img src="@obj.Source"
+                     alt="" class="pic">
+            }
+        </div>
+    </MudItem>
+</MudGrid>
+
+
+<link href="/css/Components.css" rel="stylesheet">
+
+
+@code {
+
+    IList<ImgSliderItem> items = new List<ImgSliderItem>
+    {
+        new ImgSliderItem
+        {
+            Source = "/images/asus.jpg",
+            Alt = "First Slide",
+            Caption = "Slide 1",
+            Header = "Slide 1 Header"
+
+        },
+        new ImgSliderItem
+        {
+            Source = "/images/intel.jpg",
+            Alt = "Second Slide",
+            Caption = "Slide 2",
+            Header = "Slide 2 Header"
+
+        },
+        new ImgSliderItem
+        {
+            Source = "/images/rtx.jpg",
+            Alt = "Third Slide",
+            Caption = "Slide 3",
+            Header = "Slide 3 Header"
+
+        }
+    };
+
+
+    class ImgSliderItem
+    {
+        public String Source { get; set; } = "";
+        public String Alt { get; set; } = "";
+        public String Caption { get; set; } = "";
+        public String Header { get; set; } = "";
+    }
+
+}

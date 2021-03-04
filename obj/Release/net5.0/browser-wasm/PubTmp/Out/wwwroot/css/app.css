@@ -1,0 +1,23 @@
+﻿.page{
+    margin-top:2em;
+    margin-left:2em;
+    margin-right:2em;
+}
+
+.searchBar {
+    margin: 2em;
+    text-align: center;
+    transform: translate(0%, 15%);
+}
+
+.shoppingCart {
+    text-align: end;
+}
+
+.cardImage {
+    height: 200px;
+    background-color: bisque;
+    align-self: center;
+    padding: 5px;
+}
+

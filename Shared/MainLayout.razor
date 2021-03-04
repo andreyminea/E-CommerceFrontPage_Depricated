@@ -1,0 +1,42 @@
+﻿@using IzonStore.Shared.Shared_Components
+@inherits LayoutComponentBase
+
+<MudThemeProvider Theme="IzonTheme" />
+
+@code{
+    MudTheme IzonTheme = new MudTheme()
+    {
+        Palette = new Palette()
+        {
+            Tertiary = "#FFF"
+
+        },
+        LayoutProperties = new LayoutProperties()
+        {
+            DrawerWidth = "300px"
+        }
+    };
+}
+
+<div style="margin-top:10px; margin-right:5px; margin-left:5px;">
+    <MudGrid>
+        <MudItem xs="12">
+            <MudPaper Elevation="0" Style="padding-left:5em; padding-right:5em;">
+                <LogoBar></LogoBar>
+            </MudPaper>
+        </MudItem>
+        <MudItem xs="12">
+            <MudPaper Elevation="0">
+                <MenuBar></MenuBar>
+            </MudPaper>
+        </MudItem>
+        <MudItem xs="12">
+            <MudPaper>
+                @Body
+            </MudPaper>
+        </MudItem>
+        <MudItem xs="12">
+            <MudPaper> Footer </MudPaper>
+        </MudItem>
+    </MudGrid>
+</div>

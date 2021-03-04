@@ -1,0 +1,47 @@
+﻿.productcard {
+    background-color: transparent;
+    border-radius: 25px 25px 25px 5px;
+    /*max-width: 300px;*/
+}
+
+.cardTitle {
+    font-weight: bold;
+    white-space: pre-wrap;
+    overflow: hidden;
+    line-height:1.5em;
+    height:4.5em;
+}
+.tooltip {
+    position: relative;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 250px;
+    background-color: ghostwhite;
+    color: #000;
+    text-align: left;
+    border-radius: 2px;
+    padding: 5px 0;
+
+    /* Position the tooltip */
+    position: absolute;
+    margin-left: -125px;
+    z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
+.price{
+    font-weight:bold;
+    color:red;
+    text-shadow: 1px red;
+}
+
+.cartbutton {
+    background-image: linear-gradient(to right, #733ba9, #521989);
+    color: whitesmoke;
+    margin-bottom:20px;
+}
